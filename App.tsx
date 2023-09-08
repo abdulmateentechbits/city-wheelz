@@ -5,19 +5,21 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import {HomeScreen,DestinationSearchScreen, SearchResultScreen} from './src/screens';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { HomeScreen, DestinationSearchScreen, SearchResultScreen } from './src/screens';
+import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { AppNavigator } from './src/navigators/AppNavigator';
 
 
 function App(): JSX.Element {
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <StatusBar
         animated={true}
         barStyle={'dark-content'}
       />
-      <SearchResultScreen />
+      <AppNavigator />
     </SafeAreaProvider>
   );
 }

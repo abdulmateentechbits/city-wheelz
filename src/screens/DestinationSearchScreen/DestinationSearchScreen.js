@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import React, { useRef, useState } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { TypeRowField } from '../../components';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 
@@ -82,7 +83,7 @@ export const DestinationSearchScreen = () => {
 
           }}
 
-          // renderRow={(data) => <AutocompleteRow data={data} />}
+          renderRow={(data) => <TypeRowField data={data} />}
           renderDescription={(data) => data.description || data?.vicinity}
           predefinedPlaces={[homePlace, officePlace]}
 
@@ -122,7 +123,7 @@ export const DestinationSearchScreen = () => {
               backgroundColor: 'lightgrey'
             },
           }}
-          // renderRow={(data) => <AutocompleteRow data={data} />}
+          renderRow={(data) => <TypeRowField data={data} />}
           predefinedPlaces={[homePlace, officePlace]}
         />
 
