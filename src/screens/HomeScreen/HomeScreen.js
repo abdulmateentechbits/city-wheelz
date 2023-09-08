@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import React from 'react'
-import { GoogleMapHome } from '../../components/GoogleMapHome/GoogleMapHome'
-import { AddressAdd } from '../../components/SelectAddress/AddressAdd'
-
+import { GoogleMapHome,WhereToGo } from '../../components'
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
@@ -10,7 +8,7 @@ const HomeScreen = () => {
                 <GoogleMapHome />
             </View>
             <View style={styles.bottom}>
-                <AddressAdd />
+                <WhereToGo />
             </View>
         </View>
     )
@@ -23,11 +21,11 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     top: {
-        flex: 1,
-        backgroundColor: 'red'
+        flex: 2,
+        backgroundColor: '#c1c1c1'
     },
     bottom: {
         flex: 1,
-        backgroundColor: "green"
+        backgroundColor: "#FFFFFF",
     }
 })

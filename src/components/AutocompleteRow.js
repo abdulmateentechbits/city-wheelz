@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const AddressAdd = () => {
+export const AutocompleteRow = () => {
   return (
     <View>
-      <Text>AddressAdd</Text>
+      <Text>AutocompleteRow</Text>
     </View>
   )
 }
 
-export  {AddressAdd}
 
 const styles = StyleSheet.create({})

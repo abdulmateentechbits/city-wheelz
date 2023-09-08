@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export const GoogleMapHome = () => {
+export const TypeRowField = () => {
   return (
     <View>
-      <Text>GoogleMapHome</Text>
+      <Text>TypeRowField</Text>
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({})

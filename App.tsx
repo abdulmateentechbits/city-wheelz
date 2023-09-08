@@ -5,19 +5,20 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import {HomeScreen} from './src/screens';
+import {HomeScreen,DestinationSearchScreen, SearchResultScreen} from './src/screens';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 function App(): JSX.Element {
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider>
       <StatusBar
         animated={true}
         barStyle={'dark-content'}
       />
-      <HomeScreen />
-    </SafeAreaView>
+      <SearchResultScreen />
+    </SafeAreaProvider>
   );
 }
 
