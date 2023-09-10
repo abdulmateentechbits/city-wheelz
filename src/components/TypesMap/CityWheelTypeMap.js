@@ -3,12 +3,12 @@ import React from 'react'
 import MapViewDirections from 'react-native-maps-directions';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 
-export const CityWheelTypeMap = () => {
+export const CityWheelTypeMap = ({originLocation,destinationLocation}) => {
 
     let latitude = 24.8607;
     let longitude = 67.0011;
-    const origin = { latitude: 24.927026744205644, longitude: 67.09515480372576 };
-    const destination = { latitude: 24.919458405646836, longitude: 67.10970896047867 };
+    const origin = { latitude: originLocation.lat, longitude: originLocation.lng };
+    const destination = { latitude: destinationLocation.lat, longitude: destinationLocation.lng };
     const GOOGLE_MAPS_APIKEY = 'AIzaSyBOJBXULaSOYB18Fieei4njUknZQJFZLLY';
     
     return (

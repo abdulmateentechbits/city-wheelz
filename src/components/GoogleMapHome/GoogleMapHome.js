@@ -28,7 +28,7 @@ export const GoogleMapHome = () => {
           longitudeDelta: 0.0021,
         }}
         style={styles.map}
-        showsUserLocation
+        // showsUserLocation
         minZoomLevel={16}
 
       >

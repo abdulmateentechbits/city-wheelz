@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
-import React, { useRef, useState } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { TypeRowField } from '../../components';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 
@@ -28,14 +30,28 @@ const officePlace = {
 
 
 export const DestinationSearchScreen = () => {
+
+  const { navigate } = useNavigation();
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
   const originPlaceRef = useRef();
   const destinationPlaceRef = useRef();
 
+  useEffect(() => {
+    if (originPlace && destinationPlace) {
+      navigate("SearchResult", {
+
+        originPlace,
+        destinationPlace
+
+      })
+    }
+  }, [destinationPlace, originPlace])
+
 
   return (
-    <SafeAreaView style={{ backgroundColor: '#FFFFFF', flex: 1 }}>
+    <SafeAreaView edges={['top']}>
+
       <View style={{
         flex: 1,
         backgroundColor: "#FFFFFF",

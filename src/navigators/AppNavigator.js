@@ -2,7 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen, SearchResultScreen } from '../screens';
+import { DestinationSearchScreen, HomeScreen, SearchResultScreen } from '../screens';
+import { AppDrawerNavigator } from './DrawerNavigator';
 
 
 const Stack = createNativeStackNavigator()
@@ -15,13 +16,14 @@ function AppStack() {
     return (
         <Stack.Navigator
             screenOptions={{ headerShown: false, navigationBarColor: "#FFFFFF" }}
-            initialRouteName={isAuthenticated ? "Home" : "Login"} // @demo remove-current-line
+            initialRouteName={isAuthenticated ? "Root" : "Login"}
         >
             {/* @demo remove-block-start */}
             {isAuthenticated ? (
                 <>
-                    {/* @demo remove-block-end */}
-                    <Stack.Screen name="Home" component={HomeScreen} />
+                    <Stack.Screen name="Root" component={AppDrawerNavigator} />
+                    <Stack.Screen name="Destination" component={DestinationSearchScreen} />
+                    <Stack.Screen name="SearchResult" component={SearchResultScreen} />
                 </>
             ) : (
                 <>

@@ -1,26 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
 
 export const WhereToGo = () => {
+  const { navigate } = useNavigation();
+  const gotToNextScreen = () => {
+    navigate("Destination");
+  }
   return (
     <View>
       <View style={styles.separator} />
-      <View style={styles.container}>
+      <Pressable style={styles.container} onPress={gotToNextScreen}>
         <Text style={styles.title}>Where to?</Text>
         <View style={styles.dropdownContainer}>
           <AntDesign name="clockcircle" color="#000000" style={styles.icon} />
           <Text style={styles.dropdownText}>Now</Text>
           <MaterialIcons name="keyboard-arrow-down" color="#000000" style={styles.icon} />
         </View>
-      </View>
-      <View style={[styles.container, { justifyContent: 'flex-start', columnGap: 5, paddingVertical: 10,backgroundColor:'#FFFFFF', borderBottomWidth:1, borderBottomColor:"#e1e1e1" }]}>
+      </Pressable>
+      <View style={[styles.container, { justifyContent: 'flex-start', columnGap: 5, paddingVertical: 10, backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: "#e1e1e1" }]}>
         <MaterialCommunityIcons name="office-building" color="#000000" style={[styles.icon, { fontSize: 30 }]} />
         <Text>Office</Text>
       </View>
-      <View style={[styles.container, { justifyContent: 'flex-start', columnGap: 5, paddingVertical: 10,backgroundColor:'#FFFFFF', borderBottomWidth:1, borderBottomColor:"#e1e1e1" }]}>
+      <View style={[styles.container, { justifyContent: 'flex-start', columnGap: 5, paddingVertical: 10, backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: "#e1e1e1" }]}>
         <MaterialIcons name="home-filled" color="#000000" style={[styles.icon, { fontSize: 30 }]} />
         <Text>Home</Text>
       </View>
