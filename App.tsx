@@ -8,7 +8,7 @@ import {
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { AppNavigator } from './src/navigators/AppNavigator';
 import Geolocation from '@react-native-community/geolocation';
-
+import {withAuthenticator} from 'aws-amplify-react-native';
 
 
 function App(): JSX.Element {
@@ -67,7 +67,8 @@ function App(): JSX.Element {
 }
 
 
-export default App;
+export default withAuthenticator(App);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

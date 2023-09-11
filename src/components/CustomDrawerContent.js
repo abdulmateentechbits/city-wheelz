@@ -6,6 +6,7 @@ import {
 import React from 'react';
 import { Linking, Pressable, Text, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import { Auth } from 'aws-amplify';
 
 export function CustomDrawerContent(props) {
     return (
@@ -13,11 +14,11 @@ export function CustomDrawerContent(props) {
 
             <View style={{ backgroundColor: 'black', paddingLeft: 12, paddingVertical: 12 }}>
 
-                <View style={{paddingVertical:15, flexDirection:'row', alignItems:'center'}}>
-                    <View style={{width:60,height:60,borderWidth:1,borderRadius:120,backgroundColor:'#cacaca'}}></View>
-                    <View style={{marginLeft:15}}>
-                        <Text style={{color:'white'}}>Abdul mateen</Text>
-                        <Text style={{color:'white', marginTop:8}}>5.00 *</Text>
+                <View style={{ paddingVertical: 15, flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ width: 60, height: 60, borderWidth: 1, borderRadius: 120, backgroundColor: '#cacaca' }}></View>
+                    <View style={{ marginLeft: 15 }}>
+                        <Text style={{ color: 'white' }}>Abdul mateen</Text>
+                        <Text style={{ color: 'white', marginTop: 8 }}>5.00 *</Text>
                     </View>
                 </View>
 
@@ -46,6 +47,9 @@ export function CustomDrawerContent(props) {
 
             </View>
             <DrawerItemList {...props} />
+            <Pressable onPress={() => {Auth.signOut()}} style={{ padding: 5, paddingLeft: 20 }}>
+                <Text style={{ color: 'black' }}>Logout</Text>
+            </Pressable>
         </DrawerContentScrollView>
     );
 }

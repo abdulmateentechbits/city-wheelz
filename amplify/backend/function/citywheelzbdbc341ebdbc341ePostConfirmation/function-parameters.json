@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "citywheelzbdbc341ebdbc341e",
+  "functionName": "citywheelzbdbc341ebdbc341ePostConfirmation",
+  "resourceName": "citywheelzbdbc341ebdbc341ePostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/amplify-cli/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "citywheelzbdbc341ebdbc341ePostConfirmation",
+  "skipEdit": true
+}

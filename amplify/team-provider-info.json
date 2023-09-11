@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-citywheelz-dev-154331-authRole",
+      "UnauthRoleArn": "arn:aws:iam::384438710741:role/amplify-citywheelz-dev-154331-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::384438710741:role/amplify-citywheelz-dev-154331-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-citywheelz-dev-154331-deployment",
+      "UnauthRoleName": "amplify-citywheelz-dev-154331-unauthRole",
+      "StackName": "amplify-citywheelz-dev-154331",
+      "StackId": "arn:aws:cloudformation:eu-north-1:384438710741:stack/amplify-citywheelz-dev-154331/e4871140-4fc6-11ee-9055-0a500ed7d264",
+      "AmplifyAppId": "d7slgw2tfcs9r",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-citywheelz-dev-154331-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "citywheelzbdbc341ebdbc341e": {}
+      },
+      "function": {
+        "citywheelzbdbc341ebdbc341ePostConfirmation": {
+          "deploymentBucketName": "amplify-citywheelz-dev-154331-deployment",
+          "s3Key": "amplify-builds/citywheelzbdbc341ebdbc341ePostConfirmation-635346666956326c6374-build.zip"
+        }
+      },
+      "api": {
+        "citywheelz": {}
+      }
+    }
+  }
+}
